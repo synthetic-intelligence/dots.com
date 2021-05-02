@@ -36,7 +36,7 @@ then
 fi
 
 
-#cp -R  ../dots.com/* ../dots.com/.* ~/
+cp -R .aliases .antigenrc .hushlogin .local .zshrc ~/ 
 
 
 

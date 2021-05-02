@@ -59,6 +59,6 @@ unset color_prompt force_color_prompt
 
 #export VIRTUAL_ENV_DISABLE_PROMPT=false
 
-~/.local/bin/setkeys
+#~/.local/bin/setkeys
 
-neofetch --source /home/lclose/.local/ascii/heartpink80.txt
+neofetch --source /home/lclose/.local/ascii/EO.txt
