@@ -7,10 +7,7 @@ ANTIGEN_MUTEX=false
 #Load Antigen configurations
 antigen init ~/.antigenrc
 
-
-autoload -Uz promptinit
-promptinit
-prompt OA
+source ~/.local/OA.zsh
 
 
 #Enable autojump

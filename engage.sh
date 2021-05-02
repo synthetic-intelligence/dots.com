@@ -17,7 +17,7 @@ then
 
     curl -L git.io/antigen > antigen.zsh
 
-    brew install tree exa bat 
+    brew install tree exa bat neofetch tldr
 
 
 
@@ -26,13 +26,13 @@ then
 
 
     sudo apt install zsh
-    chsh -s /usr/bin/zsh $USER
+    chsh -s /usr/bin/zsh
     sudo apt install wget git
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 
     curl -L git.io/antigen > antigen.zsh
-    sudo apt install batcat exa xsel tree
+    sudo apt install batcat exa xsel tree neofetch autojump tldr
 fi
 
 
