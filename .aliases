@@ -12,6 +12,9 @@ alias rss="ps aux | sort -n -k 4"
 alias c='clear'
 alias ch='choice'
 alias please='sudo $(fc -ln -1)'
+alias wtf='sudo tail -f /var/log/syslog'
+
+
 
 alias tre='tree -a -C'
 alias q='exa -a -l --sort=modified'
