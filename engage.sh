@@ -32,7 +32,7 @@ then
 
 
     curl -L git.io/antigen > antigen.zsh
-    sudo apt install batcat exa xsel tree neofetch autojump tldr
+    sudo apt install bat exa xsel tree neofetch autojump tldr vim
 fi
 
 
