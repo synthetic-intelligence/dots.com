@@ -29,10 +29,10 @@ then
     chsh -s /usr/bin/zsh
     sudo apt install wget git
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+    
 
-
-    curl -L git.io/antigen > antigen.zsh
     sudo apt install bat exa xsel tree neofetch autojump tldr vim
+    curl -L git.io/antigen > antigen.zsh
 fi
 
 
