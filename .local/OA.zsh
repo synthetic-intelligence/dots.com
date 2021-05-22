@@ -2,9 +2,29 @@
 
 export color_prompt=yes
 
+# alt 𝚨
+#Python and Conda venv
+function virtenv_indicator {
+    if [[ -z $VIRTUAL_ENV ]] && [[ -z $CONDA_DEFAULT_ENV ]]; then
+        psvar[1]=''
+    elif [[ -z $VIRTUAL_ENV ]]; then
+        psvar[1]=${CONDA_DEFAULT_ENV##*/}
+    elif [[ -z $CONDA_DEFAULT_ENV ]]; then
+        psvar[1]=${VIRTUAL_ENV##*/}
+    fi
+}
+
+add-zsh-hook precmd virtenv_indicator
+
 if [ "$color_prompt" = yes ]; then
-    PROMPT=$'%F{%(#.blue.green)}${debian_chroot:+($debian_chroot)──}  (%B%F{%(#.red.blue)}%n%(#.𝛀𝚨.𝛀𝚨)%m%b%F{%(#.blue.green)})[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]  \n%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
+    PROMPT=$'%(1V.%{$fs_bold[grey]%}(%1v)%{$reset_color%}.)%F{%(#.blue.green)}${debian_chroot:+($debian_chroot)}(%B%F{%(#.red.blue)}%n%(#.𝛀𝚨.𝛀𝚨)%m%b%F{%(#.blue.green)})[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
+    RPROMPT=$'%(?.. %? %F{red}%B⨯%b%F{reset})%(1j. %j %F{yellow}%B⚙%b%F{reset}.)'
     RPROMPT="%{$fg[#.blue.green]%}[%D{%c}]"
+
+
+ #if [ "$color_prompt" = yes ]; then
+ #    PROMPT=$'%F{%(#.blue.green)}${debian_chroot:+($debian_chroot)──}  (%B%F{%(#.red.blue)}%n%(#.𝛀𝚨.𝛀𝚨)%m%b%F{%(#.blue.green)})[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]  \n%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
+ #    RPROMPT="%{$fg[#.blue.green]%}[%D{%c}]"
 
     # enable syntax-highlighting
     if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && [ "$color_prompt" = yes ]; then
@@ -57,8 +77,8 @@ else
 fi
 unset color_prompt force_color_prompt
 
-#export VIRTUAL_ENV_DISABLE_PROMPT=false
+export VIRTUAL_ENV_DISABLE_PROMPT=false
 
 #~/.local/bin/setkeys
 
-neofetch --source /home/lclose/.local/ascii/EO.txt
+neofetch --source /home/lclose/.local/ascii/Rucky.txt

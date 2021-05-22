@@ -31,7 +31,7 @@ then
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
     
 
-    sudo apt install bat exa xsel tree neofetch autojump tldr vim
+    sudo apt install bat xsel tree neofetch autojump tldr vim
     curl -L git.io/antigen > antigen.zsh
 fi
 
