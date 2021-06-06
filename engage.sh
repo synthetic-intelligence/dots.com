@@ -21,7 +21,7 @@ then
 
 
 
-elif [[ "$OSTYPE" == "linux-gnu" ]]
+elif [[ "$OSTYPE" == "linux-gnu*" ]]
 then
 
 
