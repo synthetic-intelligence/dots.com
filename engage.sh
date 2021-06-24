@@ -47,6 +47,6 @@ then
 
     echo "check spelling, no caps"
 
-
+fi
 
 cp -R .aliases .antigenrc .hushlogin .local .zshrc ~/ 
