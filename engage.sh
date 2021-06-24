@@ -32,21 +32,10 @@ then
 
 
     cd
-    sudo apt install zsh
+    sudo apt install zsh bat xsel tree neofetch autojump tldr vim wget git
     chsh -s /usr/bin/zsh
-    sudo apt install wget git
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-    
-
-    sudo apt install bat xsel tree neofetch autojump tldr vim
     curl -L git.io/antigen > ~/antigen.zsh
-fi
-
-elif [[ "$VAR1" != "linux" && "VAR1" != "mac" ]]
-then
-
-    echo "check spelling, no caps"
-
 fi
 
 cp -R .aliases .antigenrc .hushlogin .local .zshrc ~/ 
