@@ -17,7 +17,7 @@ then
         brew update
     fi
 
-    brew install zsh zsh-completions
+    brew install zsh zsh-completions bpytop
 
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
@@ -36,7 +36,7 @@ then
 
 
     cd
-    sudo apt install zsh bat xsel tree neofetch autojump tldr vim wget git
+    sudo apt install zsh bat xsel tree neofetch autojump tldr vim wget git bpytop
     chsh -s /bin/zsh
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
     curl -L git.io/antigen > ~/antigen.zsh
