@@ -24,6 +24,10 @@ then
     curl -L git.io/antigen > antigen.zsh
 
     brew install tree exa bat neofetch tldr
+    
+    cp -R .aliases .antigenrc .hushlogin .local .zshrc /Users/$USER/
+    
+    exit
 
 
 
@@ -33,9 +37,15 @@ then
 
     cd
     sudo apt install zsh bat xsel tree neofetch autojump tldr vim wget git
-    chsh -s /usr/bin/zsh
+    chsh -s /bin/zsh
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
     curl -L git.io/antigen > ~/antigen.zsh
 fi
 
-cp -R .aliases .antigenrc .hushlogin .local .zshrc ~/ 
+cp -R .aliases .antigenrc .hushlogin .local .zshrc /home/$USER/
+
+exec su -l $USER
+
+!history 1
+
+source /home/$USER/.zshrc
