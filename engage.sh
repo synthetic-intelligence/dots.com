@@ -35,7 +35,7 @@ elif [[ "$VAR1" == "linux" ]]
 then
 
 
-    cd
+    
     sudo apt install zsh bat xsel tree neofetch autojump tldr vim wget git bpytop
     chsh -s /bin/zsh
     wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
