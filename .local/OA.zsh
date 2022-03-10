@@ -81,4 +81,4 @@ export VIRTUAL_ENV_DISABLE_PROMPT=false
 
 #~/.local/bin/setkeys
 
-neofetch --source /home/lclose/.local/ascii/Rucky.txt
+neofetch --source /home/lclose/.local/ascii/ducky.txt
