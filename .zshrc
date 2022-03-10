@@ -2,7 +2,7 @@ ANTIGEN_MUTEX=false
 
 
 # Load Antigen
-[[ -s "$HOME/antigen.zsh" ]] && source "$HOME/antigen.zsh"
+[[ -s "$HOME/.antigen.zsh" ]] && source "$HOME/.antigen.zsh"
 
 #Load Antigen configurations
 antigen init ~/.antigenrc
