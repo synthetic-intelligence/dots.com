@@ -1,5 +1,11 @@
 ANTIGEN_MUTEX=false
 
+export FIGNORE=".DS_Store"
+export GLOBIGNORE=".DS_Store"
+export EDITOR=vim
+ARCH=$(/usr/bin/uname -p)
+export ARCH
+
 
 # Load Antigen
 [[ -s "$HOME/.antigen.zsh" ]] && source "$HOME/.antigen.zsh"
@@ -67,9 +73,45 @@ batdiff() {
 }
 
 
+if [[ $(uname) == Darwin ]]; then
+    function lshelper () {
+        CLICOLOR_FORCE=1 /bin/ls -CFG "${@:1:1}" "${@:2}" | less -ERXF
+    }
+    alias o='open'
+elif [[ $(uname) == Linux ]]; then
+    function lshelper () {
+        /bin/ls -CF --color=always "${@:1:1}" "${@:2}" | less -ERXF
+    }
+    alias o='xdg-open'
+    # OS=$(head -1 /etc/issue | cut -d " " -f 1)
+fi
 
 
+alias shrug='echo ¯\\\_\(ツ\)_/¯'
+alias listening='netstat -anp tcp | grep "LISTEN"'
+alias ls='lshelper'
+alias la='lshelper -a'
+alias ll='lshelper -l'
+alias lla='lshelper -al'
+alias lr='lshelper -R'
+alias llr='lshelper -lR'
+alias lt='lshelper -t'
+alias llt='lshelper -lt'
+alias git-color='git -c color.ui=always'
+alias randompass='openssl rand -base64 12'
 
+
+function tolower () { echo "$*" | tr '[:upper:]' '[:lower:]'; }
+function toupper () { echo "$*" | tr '[:lower:]' '[:upper:]'; }
+
+
+function addcom () {
+    for i in "$@"
+    do
+        echo "$i"
+        git add "$i" && git commit -m 'initial' "$i"
+    done
+}
 
 zmodload zsh/datetime
 zmodload -F zsh/stat b:zstat
