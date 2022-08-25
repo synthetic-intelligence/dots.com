@@ -10,8 +10,8 @@ antigen init ~/.antigenrc
 source ~/.local/OA.zsh
 
 
-#Enable autojump
-. /usr/share/autojump/autojump.sh
+# Enable autojump
+# . /usr/share/autojump/autojump.sh
 
 # Load custom aliases
 [[ -s "$HOME/.aliases" ]] && source "$HOME/.aliases"
@@ -26,9 +26,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [ -d "$HOME/.nvm" ] ; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
 
 mkd () {
@@ -660,23 +662,3 @@ _k_bsd_to_ansi() {
   printf "%s;%s" $background_ansi $foreground_ansi
 }
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/lclose/.local/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/lclose/.local/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/lclose/.local/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/lclose/.local/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
- #export PYTHONPATH=/usr/local/lib/python3/dist-packages/:$PYTHONPATHAZZ
- #fpath+=${ZDOTDIR:-~}/.zsh_functions
- #export PATH="$HOME/.rbenv/bin:$PATH"
- #eval "$(rbenv init -)"
- #export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
