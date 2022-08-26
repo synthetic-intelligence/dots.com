@@ -1,5 +1,5 @@
 export EDITOR=vim
-export ARCH=`uname -p`
+export ARCH=`ARCH=$(/usr/bin/uname -p)`
 
 alias history="history 0"
 alias ll='ls -l'
@@ -18,40 +18,42 @@ alias gg='bpytop'
 
 
 
-alias tre='tree -a -C'
-alias q='exa -a -l --sort=modified'
-alias sudo='sudo '
+#alias tre='tree -a -C'
+#alias q='exa -a -l --sort=modified'
+#alias sudo='sudo '
+alias q='ls -latrh'
+
 alias t='ls -lt'
 alias b='ls -ltr'
 alias sudo='sudo '
 
 
-if [[ "$OSTYPE" == "darwin"* ]]
-then
-
-
-    alias cat='bat'
-    alias kit='bat --style=snip'
-    export FIGNORE=".DS_Store"
-    export GLOBIGNORE=".DS_Store"
-    alias code='code-insiders'
-
-
-elif [[ "$OSTYPE" == "linux-gnu" ]]
-then
-
-  
-    alias kit='batcat --style=snip'
-    alias cat='batcat'
-    alias open='xdg-open'
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
-    alias wtf='sudo tail -f /var/log/syslog'
-    alias wth='sudo dmesg'
-    alias status-all='sudo systemctl list-unit-files'
-    alias status='sudo systemctl status '
-    alias term='gnome-terminal'
-
-
-fi
-
+#if [[ "$OSTYPE" == "darwin"* ]]
+#then
+#
+#
+#    alias cat='bat'
+#    alias kit='bat --style=snip'
+#    export FIGNORE=".DS_Store"
+#    export GLOBIGNORE=".DS_Store"
+#    alias code='code-insiders'
+#
+#
+#elif [[ "$OSTYPE" == "linux-gnu" ]]
+#then
+#
+#  
+#    alias kit='batcat --style=snip'
+#    alias cat='batcat'
+#    alias open='xdg-open'
+#    alias pbcopy='xsel --clipboard --input'
+#    alias pbpaste='xsel --clipboard --output'
+#    alias wtf='sudo tail -f /var/log/syslog'
+#    alias wth='sudo dmesg'
+#    alias status-all='sudo systemctl list-unit-files'
+#    alias status='sudo systemctl status '
+#    alias term='gnome-terminal'
+#
+#
+#fi
+#
